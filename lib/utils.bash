@@ -74,7 +74,7 @@ install_version() {
     # TODO: Asert ansible executable exists.
     local tool_cmd
     tool_cmd="$(echo "ansible --version" | cut -d' ' -f1)"
-    test -x "$install_path/bin/$tool_cmd" || fail "Expected $install_path/bin/$tool_cmd to be executable."
+    #test -x "$install_path/bin/$tool_cmd" || fail "Expected $install_path/bin/$tool_cmd to be executable."
 
     test $("$install_path/bin/$tool_cmd" --version | grep -E '^ansible [0-9a-z\.\-]+' | cut -d ' ' -f 2) == "$version"
 
